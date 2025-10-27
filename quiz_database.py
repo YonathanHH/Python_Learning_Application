@@ -1,6 +1,8 @@
 import time
 import random
 
+### Database untuk menambahkan soal quiz
+### Struktur dictionary berupa  {"question": "int", "options":[list 4],"answer":"int"}
 quiz_database = [{
             "question": "Tipe data apa yang digunakan untuk menyimpan bilangan desimal?",
             "options": ["A. Integer", "B. Float", "C. String", "D. Boolean"],
@@ -41,9 +43,6 @@ quiz_database = [{
 
 
 def tampilkan_hasil(skor, total_soal, hasil_jawaban):
-    """
-    Menampilkan hasil quiz dan review jawaban
-    """
     print("\n" + "="*60)
     print("HASIL QUIZ")
     print("="*60)
@@ -53,7 +52,7 @@ def tampilkan_hasil(skor, total_soal, hasil_jawaban):
     print(f"\nSkor Anda: {skor}/{total_soal}")
     print(f"Persentase: {persentase:.1f}%")
     
-    # Hitung total waktu
+    #Menghitung rata2 dan total waktu
     total_waktu = sum(h['waktu'] for h in hasil_jawaban)
     rata_waktu = total_waktu / total_soal
     print(f"Total Waktu: {total_waktu:.1f} detik")
@@ -61,18 +60,20 @@ def tampilkan_hasil(skor, total_soal, hasil_jawaban):
     
     # Kategori nilai
     print("\n" + "-"*60)
-    if persentase >= 90:
-        print("Grade: A - SEMPURNA! 🌟")
+    if persentase == 100:
+        print("Grade: A+ - Perfect! ")
+    elif persentase >= 90:
+        print("Grade: A - Sangat baik! ")
     elif persentase >= 80:
-        print("Grade: B - BAGUS SEKALI! 👍")
+        print("Grade: B - Baik! ")
     elif persentase >= 70:
-        print("Grade: C - BAIK! 👌")
+        print("Grade: C - Cukup Baik! ")
     elif persentase >= 60:
-        print("Grade: D - CUKUP, Perlu Belajar Lagi 📚")
+        print("Grade: D - Cukup! ")
     else:
-        print("Grade: E - Ayo Semangat Belajar! 💪")
+        print("Grade: E - Masih kurang, Perlu Belajar Lagi")
     print("-"*60)
-    
+    print(input("Tekan enter untuk melihat review jawaban..."))
     # Review jawaban
     print("\n" + "="*60)
     print("REVIEW JAWABAN")
@@ -91,9 +92,7 @@ def tampilkan_hasil(skor, total_soal, hasil_jawaban):
     print("="*60)
     
 def run_quiz():
-    """
-    Menjalankan quiz interaktif dengan timer
-    """
+    # Menampilkan instruksi
     print("\n" + "="*60)
     print("QUIZ PYTHON BASICS")
     print("="*60)
@@ -103,9 +102,9 @@ def run_quiz():
     print("- Jawaban akan otomatis dianggap salah jika waktu habis")
     print("="*60)
     
-    # Tanya jumlah soal
+    # User input untuk menampilkan berapa soal yang dikerjakan
     try:
-        jumlah_soal = int(input("\nBerapa soal yang ingin dikerjakan? (1-10): "))
+        jumlah_soal = int(input(f"\nBerapa soal yang ingin dikerjakan? (1-{len(quiz_database)}): "))
         if jumlah_soal < 1 or jumlah_soal > len(quiz_database):
             print(f"Jumlah soal harus antara 1-{len(quiz_database)}")
             return
@@ -113,10 +112,10 @@ def run_quiz():
         print("Input harus berupa angka!")
         return
     
-    # Pilih soal secara acak
+    # randomize pertanyaan
     soal_terpilih = random.sample(quiz_database, jumlah_soal)
     
-    # Variabel untuk tracking
+    # Untuk track skor, jawaban, dan store waktu dalam detik
     skor = 0
     hasil_jawaban = []
     waktu_per_soal = 30  # detik
@@ -146,7 +145,7 @@ def run_quiz():
         
         # Cek apakah waktu habis
         if waktu_terpakai > waktu_per_soal:
-            print(f"\n⏰ WAKTU HABIS! ({waktu_terpakai:.1f} detik)")
+            print(f"\n WAKTU HABIS! ({waktu_terpakai:.1f} detik)")
             is_correct = False
             jawaban_user = "TIMEOUT"
         else:

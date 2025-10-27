@@ -1,3 +1,5 @@
+### File ini berisi silabus dan berbagai teori berkaitan dengan python
+### Mulai silabus
 def syllabus():
     print('''Apa yang akan kita pelajari hari ini?
           1. Printing and comments
@@ -13,6 +15,7 @@ def syllabus():
           11. File import
           ''')
 
+### Mulai teori
 def printing_comments():
     print("print() digunakan untuk menampilkan output.")
     print("Komentar diawali dengan # untuk satu baris atau '''...''' untuk banyak baris.")
@@ -89,7 +92,7 @@ def file_import():
           Contoh: \n
           import math \n
           print(math.pi)''')
-    
+###Print teori
 def theory():
     print("\nPilih topik teori yang ingin dipelajari:")
     print("1. Printing and comments")

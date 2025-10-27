@@ -1,4 +1,5 @@
 import knowledge_database as kdb
+import casestudy_database as cdb
 import quiz_database as qdb
 def main_menu():
     print('#'*50 )
@@ -24,7 +25,7 @@ def main():
                 kdb.theory()
                 input('Tekan enter untuk melanjutkan...')
             elif choice == '3':
-                kdb.case_study()
+                cdb.case_study()
                 input('Tekan enter untuk melanjutkan...')
             elif choice == '4':
                 qdb.run_quiz()
