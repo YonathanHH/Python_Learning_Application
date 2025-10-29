@@ -16,6 +16,8 @@ python-learning-app/
 ├── quiz_database.py           # Quiz questions and assessment engine
 └── README.md                  # This file
 ```
+## Flow Chart
+![Alt text](Flow_Chart.jpeg)
 
 ## File Descriptions
 
@@ -60,4 +62,5 @@ Follow the on-screen prompts to navigate through the learning material and compl
 - **Structured Learning Path** - Organized progression from basics to advanced topics
 - **Hands-on Practice** - Real-world case studies and coding exercises
 - **Self-Assessment** - Quiz functionality to evaluate learning
+
 - **No External Dependencies** - Uses only Python built-in functions
