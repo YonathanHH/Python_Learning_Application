@@ -17,7 +17,7 @@ python-learning-app/
 └── README.md                  # This file
 ```
 ## Flow Chart
-![Alt text](Flow_Chart.jpeg)
+![Alt text](Flow_Chart.jpg)
 
 ## File Descriptions
 
@@ -64,3 +64,4 @@ Follow the on-screen prompts to navigate through the learning material and compl
 - **Self-Assessment** - Quiz functionality to evaluate learning
 
 - **No External Dependencies** - Uses only Python built-in functions
+
