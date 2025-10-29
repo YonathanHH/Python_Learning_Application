@@ -6,6 +6,9 @@ An interactive Python learning application designed to teach Python programming 
 
 This application provides a structured learning experience with theory, practical case studies, and assessment quizzes. Users can navigate through Python concepts, work through real-world problems, and test their knowledge—all within an interactive Python terminal environment.
 
+### Indonesian documentation [ID]
+https://docs.google.com/document/d/1DHO8f-IYEwWpyoroJWEoAx_HC3CxvpF7lEGlBrPaLCM/edit?tab=t.0
+
 ## Project Structure
 
 ```
@@ -64,4 +67,5 @@ Follow the on-screen prompts to navigate through the learning material and compl
 - **Self-Assessment** - Quiz functionality to evaluate learning
 
 - **No External Dependencies** - Uses only Python built-in functions
+
 
